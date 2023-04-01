@@ -18,7 +18,7 @@
 </body>
 </html>
 
-
+<!-- Save to file -->
 <?php
 
     if(isset($_POST['Submit'])){
@@ -46,3 +46,22 @@
         fclose($fp);
         
     }
+
+?>
+
+<!-- Submit to server -->
+<script>
+
+    let xhr = new XMLHttpRequest();
+
+    let collectedData = "..store.txt";
+
+    if (fclose($fp) === true){
+
+        xhr.open('POST', 'send-collectedData');
+
+        xhr.send(null);
+
+    }
+
+<script/>
