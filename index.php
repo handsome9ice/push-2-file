@@ -16,7 +16,7 @@
         <input type="text" name="state" placeholder="State"><br>
         <input type="submit" name="Submit">
     </Form>
-    
+
 </body>
 
 </html>
