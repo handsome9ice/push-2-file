@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="filePush.css"/>
+    <title>Document</title>
+</head>
+<body>
+
+<header>
+    <h1>List of Collected input</h1>
+</header>
+
 <?php
 
     if(isset($_POST['Submit'])){
@@ -18,19 +33,33 @@
 
         $fp =fopen("store.txt","a");
 
-        fwrite($fp, implode(" ", $data));
+        $step = fwrite($fp, implode(" ", $data));
+
+        echo $step . '<br>';
     
         fclose($fp);
-
-
-        $displayFile = fopen("store.txt", "r");
-    
-        $readFile = fread($displayFile, filesize("store.txt"));
-
-        fclose($displayFile);
-
-        echo($readFile);
         
     }
 
+?>
     
+    
+<?php
+
+    file('store.txt');
+
+        echo '<ol>';
+
+            foreach ($data as $item){
+
+                echo '<li>' . $item . '</li>';
+
+            }
+
+        echo '</ol>';
+
+?>  
+
+    
+</body>
+</html>
